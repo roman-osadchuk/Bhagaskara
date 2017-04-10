@@ -1826,12 +1826,18 @@ section_8 > div{
 }
 
 #socials > div{
-    height: 70px;
-    width: 70px;
     margin-right: 40px;
     text-align: center;
-    border-radius: 50%;
-    border: 1px solid #aaa;
+}
+
+#socials > div > i {
+    font-size:60px;
+    color: #444;
+}
+
+#socials > div > i:hover {
+    color: #38d;
+    cursor: pointer;
 }
 
 #socials > div > span {
