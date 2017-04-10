@@ -5,3 +5,9 @@ img/
 
 #fonts
 fonts/
+
+#node
+node_modules/
+
+#libs
+libs/
