@@ -1,13 +1,2 @@
-#images
-slide_images/
-menu_images/
-img/
-
-#fonts
-fonts/
-
 #node
 node_modules/
-
-#libs
-libs/

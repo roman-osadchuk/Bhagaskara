@@ -882,6 +882,7 @@ section_1{
 
 #gadgets-box + div{
     display: none;
+    max-width: 1200px;
     width: 80%;
     margin: 80px auto;
     text-align: center;
@@ -1418,7 +1419,7 @@ section_6 > div{
     flex-direction: row;
     justify-content: center;
     margin-top: 30px;
-    margin-bottom: 150px;
+    margin-bottom: 30px;
 }
 
 .navigator{
@@ -1732,14 +1733,14 @@ section_7 > div{
 /********************* SECTION 8 ********************/
 
 
-section_8{
+footer{
     display: flex;
     justify-content: center;
     height: 1200px;
     background-color: #fef;
 }
 
-section_8 > div{
+footer > div{
     width: 1200px;
 }
 
@@ -1788,7 +1789,7 @@ section_8 > div{
     box-shadow: 0 0 3px #2277ff;
 }
 
-#myForm > input[type=submit] {
+#myForm > input[type=button] {
     width: 150px;
     padding: 12px 20px;
     border: 1px solid #555;
@@ -1796,7 +1797,7 @@ section_8 > div{
     border-radius: 5px;
 }
 
-#myForm > input[type=submit]:hover {
+#myForm > input[type=button]:hover {
     background-color: #9f449b;
     color: #fff;
 }
@@ -1859,7 +1860,7 @@ section_8 > div{
 
 
 @media screen and (max-width: 850px) {
-    section_8{
+    footer{
         height: 100%;
     }
     
@@ -1911,8 +1912,4 @@ section_8 > div{
         margin-bottom: 150px;
     }
 }
-
-
-
-
 
