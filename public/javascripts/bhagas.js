@@ -155,13 +155,13 @@ $(document).ready(function(){
             function menuAnimation(){
             var ind;
 
-            if($(this).find("img").attr("src") == "img/menu_icon_1.gif"){
+            if($(this).find("img").attr("src") == "images/psd_images/menu_icon_1.gif"){
                 ind = 0;
-            }else if($(this).find("img").attr("src") == "img/menu_icon_2.gif"){
+            }else if($(this).find("img").attr("src") == "images/psd_images/menu_icon_2.gif"){
                 ind = 1;
-            }else if($(this).find("img").attr("src") == "img/menu_icon_3.gif"){
+            }else if($(this).find("img").attr("src") == "images/psd_images/menu_icon_3.gif"){
                 ind = 2;
-            }else if($(this).find("img").attr("src") == "img/menu_icon_4.gif"){
+            }else if($(this).find("img").attr("src") == "images/psd_images/menu_icon_4.gif"){
                 ind = 3;
             }    
 
@@ -677,9 +677,60 @@ $(document).ready(function(){
                 $(".paginations").removeClass("paginations_active");
                 $(".paginations").eq(2).addClass("paginations_active");
             });
-
+            
         }
         
     })();
+    
+    
+    //usnng ajax
+    /*(function(){
+        
+        $('#access_db').click(function(){
+            $.ajax({
+                url: '/db_control',
+                method: 'GET',
+                contentType: 'html',
+                success: function(res){
+                    $('body').html(res);
+                }
+            });
+        });
+        
+    })();*/
+    
+    
+    //sending data
+    (function(){
+        
+        $('#send_data').click(function(e){
+            e.preventDefault();
+            
+            var client_name = $("#myForm input[name=client_name]").val();
+            var client_email = $("#myForm input[name=client_email]").val();
+            var client_message = $("#myForm textarea").val();
+            
+            $.ajax({
+                url: '/insert',
+                method: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({
+                    client_name: client_name,
+                    client_email: client_email,
+                    client_message: client_message
+                }),
+                success: function(res){
+                    $("#myForm input[name=client_name]").val('');
+                    $("#myForm input[name=client_email]").val('');
+                    $("#myForm textarea").val('');
+                    alert(res.message);
+                }
+            });
+        });
+        
+    })(); 
+  
+    
+    
     
 });

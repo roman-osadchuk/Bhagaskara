@@ -2,12 +2,17 @@
   "name": "roman_osadchuk_bhagaskara",
   "version": "1.0.0",
   "description": "portfolio_project",
-  "main": "index.html",
+  "main": "index.hbs",
   "dependencies": {
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
     "grunt": "^1.0.1",
-    "mongodb": "^2.2.26"
+    "mongodb": "^2.2.26",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.0",
+    "express-handlebars": "^3.0.0",
+    "morgan": "~1.7.0",
+    "serve-favicon": "~2.3.2"
   },
   "devDependencies": {
     "grunt": "^1.0.1",

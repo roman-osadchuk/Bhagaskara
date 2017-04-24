@@ -10,17 +10,17 @@ body{
 
 @font-face {
     font-family: "Existence Light";
-    src: url(fonts/ExiL-TT/Existence-Light.ttf);
+    src: url(../fonts/ExiL-TT/Existence-Light.ttf);
 }
 
 @font-face {
     font-family: "Lato Hairline";
-    src: url(fonts/Lato_Hairline/Lato-Hairline.ttf);
+    src: url(../fonts/Lato_Hairline/Lato-Hairline.ttf);
 }
 
 @font-face {
     font-family: "Lato Regular";
-    src: url(fonts/Lato/Lato-Regular.ttf);
+    src: url(../fonts/Lato/Lato-Regular.ttf);
 }
 
 
@@ -36,7 +36,7 @@ header{
     position: relative;
     height: 900px;
     overflow: hidden;
-    background-image: url("img/main_background.gif");
+    background-image: url("../images/psd_images/main_background.gif");
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
@@ -948,7 +948,7 @@ section_2{
     align-items: center;
     flex-direction: column;
     height: 650px;
-    background-image: url("img/blur_background.gif");
+    background-image: url("../images/psd_images/blur_background.gif");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -1279,7 +1279,7 @@ section_5{
     align-items: center;
     flex-direction: column;
     height: 650px;
-    background-image: url("img/blur_background.gif");
+    background-image: url("../images/psd_images/blur_background.gif");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1789,7 +1789,7 @@ footer > div{
     box-shadow: 0 0 3px #2277ff;
 }
 
-#myForm > input[type=button] {
+#myForm > input[type=submit] {
     width: 150px;
     padding: 12px 20px;
     border: 1px solid #555;
@@ -1797,7 +1797,24 @@ footer > div{
     border-radius: 5px;
 }
 
-#myForm > input[type=button]:hover {
+#myForm a {
+    width: 180px;
+    padding: 13px 20px;
+    border: 1px solid #555;
+    font-size: 16px;
+    text-decoration: none;
+    color: #111;
+    background-color: #eee;
+    border-radius: 5px;
+}
+
+#myForm > input[type=submit]:hover {
+    background-color: #9f449b;
+    color: #fff;
+}
+
+
+#myForm a:hover {
     background-color: #9f449b;
     color: #fff;
 }
@@ -1912,4 +1929,6 @@ footer > div{
         margin-bottom: 150px;
     }
 }
+
+
 

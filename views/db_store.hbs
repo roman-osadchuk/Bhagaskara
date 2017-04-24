@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Data Base</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="stylesheets/db_style.css" >
+    
+    <style>
+        
+    </style>
+</head>
+
+<body>
+   
+   
+   <div id="database_box">
+        <h2>Database Control panel</h2>
+        <a href="/get-data">Load DATA</a>
+        <hr>
+        
+        <div>
+            {{# each items}}
+               
+                <article class="item">
+                    <span>Client Name: <b>{{ this.ClientName }}</b></span>
+                    <span>Client Email: <b>{{ this.ClientEmail }}</b></span>
+                    <span>Client Message: <b>{{ this.ClientMessage }}</b></span>
+                    <span>Client ID: <b>{{ this._id }}</b></span>
+                    
+                    <div class="update_data">
+                        <form action="/update" method="post">
+                            <label for="client_name">New Name</label><br>
+                            <input type="text" id="client_name" name="client_name"><br>
+                            <label for="client_email">New Email</label><br>
+                            <input type="text" id="client_email" name="client_email"><br>
+                            <label for="client_message">New Message</label><br>
+                            <input type="text" id="client_message" name="client_message"><br><br>
+                            <input type="submit" name="update_data" id="update_data" value="Confirm Update"/>
+                        </form>
+                    </div>
+                    
+                    <div class="change_data">
+                        <button class="update_button">Update</button>
+                        <button class="delete_button">Delete</button>
+                    </div>
+                </article>
+                
+            {{/each}}
+        </div>
+        
+    </div>
+    
+    
+    
+    <script src="libs/jquery-3.1.1.js"></script>
+    <script src="javascripts/db_scripts.js"></script>
+    
+</body>
+
+</html>

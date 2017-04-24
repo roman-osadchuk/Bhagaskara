@@ -1,0 +1,97 @@
+#database_box {
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 10px;
+    width: 500px;
+    min-height: 500px;
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+#database_box > h2 {
+    text-align: center;
+    margin: 0;
+}
+
+#database_box > a {
+    text-decoration: none;
+    margin: 16px;
+    color: #669;
+}
+
+#database_box > a:hover {
+    cursor: pointer;
+    color: #55a;
+}
+
+#database_box hr {
+    width: 96%;
+}
+
+.item{
+    margin: 5px;
+    padding: 5px;
+    background-color: #aaa;
+    border: 1px solid #769;
+    border-radius: 3px;
+}
+
+.item > span {
+    display: block;
+    margin: 2px;
+}
+
+.update_data {
+    display: none;
+}
+
+.update_data form {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccf;
+    border-radius: 3px;
+}
+
+.update_data form label {
+    margin-top: 5px;
+}
+
+.update_data form input {
+    margin-bottom: 5px;
+}
+
+.update_data form input[type=submit] {
+    width: 120px;
+    padding: 2px 5px;
+    color: #ddd;
+    background-color: #844;
+    border: 1px solid #555;
+    border-radius: 2px;
+}
+
+.update_data form input[type=submit]:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.change_data {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 5px;
+}
+
+.change_data button {
+    display: block;
+    padding: 3px 15px;
+    margin-right: 5px;
+    border: 1px solid #999;
+    border-radius: 3px;
+    background-color: #ccc;
+    color: #555;
+}
+
+.change_data button:hover {
+    background-color: #9ad;
+    color: #ddd;
+    cursor: pointer;
+}
