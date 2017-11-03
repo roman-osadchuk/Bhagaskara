@@ -1759,6 +1759,13 @@ footer > div{
     width: 100%;
 }
 
+#myForm > span {
+    display: none;
+    padding: 4px;
+    color: red;
+    font-size: 14px;
+}
+
 #myForm > input[type=text] {
     width: 95%;
     box-sizing: border-box;

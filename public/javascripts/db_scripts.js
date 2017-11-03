@@ -22,7 +22,7 @@
             var client_name = update_data.find('form #client_name').val();
             var client_email = update_data.find('form #client_email').val();
             var client_message = update_data.find('form #client_message').val();
-            var client_id = span.eq(3).find('b').text();
+            var client_id = span.eq(4).find('b').text();
             
             $.ajax({
                 url: '/update',
@@ -52,7 +52,7 @@
     
     $('.delete_button').click(function() {
         
-        var id = $(this).closest('.item').find('span').eq(3).find('b').text();
+        var id = $(this).closest('.item').find('span').eq(4).find('b').text();
         
         $.ajax({
             url: '/delete',

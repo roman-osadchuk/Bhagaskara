@@ -597,10 +597,10 @@ $(document).ready(function(){
     //modal image animation
     (function() {
         
-        $("#image_container img").click(function(e){
+        $("#image_container").on('click', 'img', function(e){
             modal_img(e.target);
         });
-
+        
         $("#modal_image span").click(function(){
             $("#modal_image").hide();
         });
@@ -683,53 +683,102 @@ $(document).ready(function(){
     })();
     
     
-    //usnng ajax
-    /*(function(){
+    
+    //validation and sending data
+    (function(){
         
-        $('#access_db').click(function(){
-            $.ajax({
-                url: '/db_control',
-                method: 'GET',
-                contentType: 'html',
-                success: function(res){
-                    $('body').html(res);
-                }
-            });
+        var nameFlag = false,
+            emailFlag = false,
+            messageFlag = true;
+        
+        var client_name,
+            client_email,
+            client_message;
+        
+        var emailRegExp = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+        
+        
+        $('#client_name').blur(function() {
+        client_name = $("#myForm input[name=client_name]").val();
+            if(client_name == ''){
+                $('#myForm > span').eq(0).css({
+                    "display" : "block"
+                });
+                nameFlag = false;
+            }else if(client_name.length > 50){
+                $('#myForm > span').eq(1).css({
+                    "display" : "block"
+                });
+                nameFlag = false;
+            }else{
+                $('#myForm > span').eq(0).css({
+                    "display" : "none"
+                });
+                $('#myForm > span').eq(1).css({
+                    "display" : "none"
+                });
+                nameFlag = true;
+            }
         });
         
-    })();*/
-    
-    
-    //sending data
-    (function(){
+        
+        $('#client_email').blur(function() {
+        client_email = $("#myForm input[name=client_email]").val();
+            if(!emailRegExp.test(client_email)){
+                $('#myForm > span').eq(2).css({
+                    "display" : "block"
+                });
+                emailFlag = false;
+            }else{
+                $('#myForm > span').eq(2).css({
+                    "display" : "none"
+                });
+                emailFlag = true;
+            }
+        });
+        
+        $('#client_message').blur(function() {
+        client_message = $("#myForm textarea").val();
+            if(client_message.length > 500){
+                $('#myForm > span').eq(3).css({
+                    "display" : "block"
+                });
+                messageFlag = false;
+            }else{
+                $('#myForm > span').eq(3).css({
+                    "display" : "none"
+                });
+                messageFlag = true;
+            }
+        });
+        
         
         $('#send_data').click(function(e){
             e.preventDefault();
             
-            var client_name = $("#myForm input[name=client_name]").val();
-            var client_email = $("#myForm input[name=client_email]").val();
-            var client_message = $("#myForm textarea").val();
-            
-            $.ajax({
-                url: '/insert',
-                method: 'POST',
-                contentType: 'application/json',
-                data: JSON.stringify({
-                    client_name: client_name,
-                    client_email: client_email,
-                    client_message: client_message
-                }),
-                success: function(res){
-                    $("#myForm input[name=client_name]").val('');
-                    $("#myForm input[name=client_email]").val('');
-                    $("#myForm textarea").val('');
-                    alert(res.message);
-                }
-            });
+            if(nameFlag && emailFlag && messageFlag){
+                $.ajax({
+                    url: '/insert',
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({
+                        client_name: client_name,
+                        client_email: client_email,
+                        client_message: client_message
+                    }),
+                    success: function(res){
+                        $('#myForm').trigger('reset');
+                        nameFlag, emailFlag = false;
+                        alert(res.message);
+                    }
+                });
+            }else{
+                alert("Please make sure you enter correct information");
+            }
         });
         
     })(); 
-  
+    
     
     
     
